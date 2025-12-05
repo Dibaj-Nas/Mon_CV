@@ -1,0 +1,119 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: darkslategray;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto auto auto auto;
+    grid-template-areas: 
+    "header header header"
+    "img texte texte"
+    "experiances experiances experiances"
+    "skills skills skills"
+    "footer footer footer";
+}
+
+header {
+    grid-area: header;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgb(9, 63, 63);
+    color: aliceblue;
+    border-bottom: 1px solid #fff;
+}
+header h1 {
+    font-size: 5em;
+    font-weight: bold;
+    padding: 30px;
+}
+header span {
+    font-size: 2em;
+    font-style: italic;
+    padding-bottom: 40px;
+}
+
+header nav ul {
+    display: flex;
+    justify-content: end;
+    align-items: end;
+    flex-direction: row;
+    padding-bottom: 10px;
+    margin-left: 1200px;
+    gap: 50px;
+}
+header nav ul li {
+    
+    list-style: none;
+    text-decoration: none;
+    color: black;
+    border: none;
+    border-radius: 5px;
+
+}
+nav ul li a{
+    
+    text-decoration: none;
+    color: aliceblue;
+    transition: transform 0.5 ease, background 0.5 ease;
+}
+
+nav ul li a:hover {
+    transform: scale(0.8);
+    background: rgb(7, 86, 110);
+}
+
+.img {
+    grid-area: img;
+    padding-top: 50px;
+    margin-left: 50px;
+    
+}
+.img img {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 300px;
+    border-radius: 50%;
+    border: 5px solid darkcyan;
+}
+
+.img ul {
+    display: flex;
+    justify-content: start;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: 20px;
+    margin-left: 80px;
+    list-style: none;
+
+}
+.texte {
+    grid-area: texte;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    font-size: 1.5em;
+}
+.texte h2 {
+    padding-bottom: 20px;
+}
+#experiances {
+    grid-area: experiances;
+}
+#skills {
+    grid-area: skills;
+}
+footer {
+    grid-area: footer;
+}
