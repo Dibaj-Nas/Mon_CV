@@ -7,7 +7,7 @@
 body {
     background: #cccccc;
     font-family: 'Courier New', Courier, monospace;
-    line-height: 1.6;
+    line-height: 2;
 }
 
 main {
@@ -18,8 +18,7 @@ main {
         "header header header"
         "nav nav nav"
         "section-apropos section-apropos section-img"
-        "experiences experiences experiences"
-        "formations formations formations"
+        "experiences experiences formations"
         "projets projets projets"
         "skills skills skills"
         "footer footer footer";
@@ -90,22 +89,26 @@ nav ul li a:hover {
     padding: 50px;
 }
 
-img {
-    width: 300px;
-    height: 300px;
+#img img {
+    width: clamp(300px, 25%, 600px);
+    height: clamp(300px, 25%, 600px);
+    overflow: visible;
+    background-color: #fff;
     border-radius: 50%;
-    border: 5px solid darkcyan;
+    padding: ;
     object-fit: cover;
 }
 
-img ul {
+#img ul {
     list-style: none;
-    margin-top: 20px;
+    margin-top: 10px;
+    padding: 2rem;
 }
 
-img ul li {
-    border-bottom: 1px solid gray;
-    padding: 5px 0;
+#img li {
+    background-color: lightgoldenrodyellow;
+    padding: 5px;
+    border: 0.5px dashed;
 }
 
 .section-apropos {
@@ -138,6 +141,27 @@ img ul li {
     padding: 50px;
 }
 
+.items {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.items h3 {
+    font-size: 1.4rem;
+}
+
+.content p {
+    border-bottom: 1px dashed;
+    font-size: 1rem;
+    object-fit: cover;
+}
+
+.content span {
+    background-color: darkcyan;
+} 
+
 .experiences h2 {
     font-weight: bold;
     font-size: 2rem;
@@ -149,18 +173,14 @@ img ul li {
     border-radius: 10px;
 }
 
-.items {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
 .content {
-    background: #fff;
+    text-align: center;
+    width: 100%;
+    background: lightgray;
     border-left: 5px solid #004d4d;
     border-radius: 20px;
     padding: 20px;
-    box-shadow: 2px 3px 5px rgba(0,0,0,0.2);
+    
 }
 
 .content h3 {
@@ -168,12 +188,6 @@ img ul li {
     margin-bottom: 10px;
 }
 
-.content span {
-    background: orangered;
-    color: #fff;
-    padding: 3px 8px;
-    border-radius: 5px;
-}
 
 .formations {
     grid-area: formations;
@@ -214,43 +228,6 @@ img ul li {
     border-radius: 5px;
 }
 
-.projets {
-    grid-area: projets;
-    padding: 50px;
-}
-
-.projets h2 {
-    font-weight: bold;
-    font-size: 2rem;
-    text-align: center;
-    margin-bottom: 50px;
-    background-color: #004d4d;
-    color: #fff;
-    padding: 10px;
-    border-radius: 10px;
-}
-
-.projet-contents {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    gap: 20px;
-}
-
-.projet-contents > div {
-    background: lightgray;
-    padding: 30px;
-    border-radius: 20px;
-    text-align: center;
-    box-shadow: 2px 3px 5px #004d4d;
-    flex: 1 1 250px;
-}
-
-.projet-contents img {
-    width: 150px;
-    height: 150px;
-    margin-bottom: 20px;
-}
 
 .skills {
     grid-area: skills;
@@ -267,15 +244,18 @@ img ul li {
     border-radius: 10px;
 }
 
-.skill {
+.skill-items {
     display: flex;
     justify-content: space-around;
+    align-items: center;
     flex-wrap: wrap;
+    padding: 30px;
+    box-shadow: 2px 3px 5px #004d4d;
     gap: 20px;
 }
 
-.skill > div {
-    
+.skills h3 {
+    text-align: center;
 }
 
 
