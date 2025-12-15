@@ -4,8 +4,15 @@
     box-sizing: border-box;
 }
 
+/*HEX CODES:
+#041421
+#042630
+#4c7273
+#86b9b0
+#d0d6d6*/
+
 body {
-    background: #cccccc;
+    background: radial-gradient(circle at center, #4c7273, #041421); 
     font-family: 'Courier New', Courier, monospace;
     line-height: 2;
 }
@@ -19,7 +26,6 @@ main {
         "nav nav nav"
         "section-apropos section-apropos section-img"
         "experiences experiences formations"
-        "projets projets projets"
         "skills skills skills"
         "footer footer footer";
 }
@@ -27,10 +33,11 @@ main {
 
 header {
     grid-area: hader;
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: start;
-    height: 700px;
+    height: 100vh;
     background: url(https://images.pexels.com/photos/7546979/pexels-photo-7546979.jpeg) no-repeat center center/cover;
     background-attachment: fixed;
     color: aliceblue;
@@ -48,13 +55,45 @@ header .subtitle {
     padding: 50px;
 }
 
+.scroll-indicator {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30px;
+  height: 50px;
+  border: 2px solid #fff;
+  border-radius: 20px;
+}
+
+.scroll-indicator span {
+  display: block;
+  width: 6px;
+  height: 8px;
+  background: #fff;
+  border-radius: 50%;
+  margin: 8px auto 0;
+  animation: scroll 1.5s infinite;
+}
+
+@keyframes scroll {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+}
+
 
 nav {
     grid-area: nav;
     position: sticky;
     top: 0;
     width: 100%;
-    background: #004d4d;
+    background: #4c7273;
     padding: 15px 50px;
     z-index: 1000;
     display: flex;
@@ -87,28 +126,34 @@ nav ul li a:hover {
     flex-direction: column;
     align-items: center;
     padding: 50px;
+    margin-top: 50px;
 }
 
 #img img {
-    width: clamp(300px, 25%, 600px);
+    width: clamp(305px, 25%, 600px);
     height: clamp(300px, 25%, 600px);
     overflow: visible;
     background-color: #fff;
     border-radius: 50%;
-    padding: ;
+    margin-left: 20%;
     object-fit: cover;
 }
 
 #img ul {
     list-style: none;
     margin-top: 10px;
-    padding: 2rem;
+    width: 150%;
 }
 
 #img li {
     background-color: lightgoldenrodyellow;
-    padding: 5px;
+    padding: 8px;
     border: 0.5px dashed;
+}
+
+#img a {
+    text-decoration: none;
+    color: darkcyan;
 }
 
 .section-apropos {
@@ -116,8 +161,8 @@ nav ul li a:hover {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 50px;
-    font-size: 1.5rem;
+    padding: 13%;
+    font-size: 1.2rem;
 }
 
 .section-apropos h2 {
@@ -158,16 +203,14 @@ nav ul li a:hover {
     object-fit: cover;
 }
 
-.content span {
-    background-color: darkcyan;
-} 
+
 
 .experiences h2 {
     font-weight: bold;
     font-size: 2rem;
     text-align: center;
     margin-bottom: 50px;
-    background-color: #004d4d;
+    background-color: #042630;
     color: #fff;
     padding: 10px;
     border-radius: 10px;
@@ -176,8 +219,9 @@ nav ul li a:hover {
 .content {
     text-align: center;
     width: 100%;
-    background: lightgray;
-    border-left: 5px solid #004d4d;
+    background: #305f61;
+    border-left: 7px solid #86b9b0;
+    border-right: 7px solid #86b9b0;
     border-radius: 20px;
     padding: 20px;
     
@@ -199,32 +243,63 @@ nav ul li a:hover {
     font-size: 2rem;
     text-align: center;
     margin-bottom: 50px;
-    background-color: #004d4d;
+    background-color: #042630;
     color: #fff;
     padding: 10px;
     border-radius: 10px;
 }
 
 .items-formation {
-    display: flex;
-    justify-content: space-around;
     flex-wrap: wrap;
     gap: 20px;
 }
 
 .items-formation > div {
-    background: #fff;
+    background: #305f61;
     border-radius: 20px;
-    padding: 20px;
+    padding: 4%;
     flex: 1 1 300px;
     text-align: center;
 }
+#formation-1 p, #formation-2 p {
+    text-align: start;
+    font-size: 1.1rem;
+} 
+#formation-1 {
+    border-bottom: 2px solid #86b9b0;
+    border-left: 5px solid #86b9b0;
+    border-right: 5px solid #86b9b0;
+}
+
+#formation-2 {
+    border-top: 2px solid #86b9b0;
+    border-left: 5px solid #86b9b0;
+    border-right: 5px solid #86b9b0;
+}
+
+.items-formation mark {
+    color: #fff;
+    font-size: 1rem;
+    padding: 5px;
+    border-radius: 10px;
+    animation: highlight 1.5s ease-in-out infinite;
+}
+
+@keyframes highlight {
+    0% {
+        background-color: orangered;
+    }
+    50% {
+        background-color: transparent;
+    }
+    100% {
+        background-color: orangered;
+    } 
+}
+
 
 .items-formation h3 {
     margin-bottom: 15px;
-    background-color: #004d4d;
-    color: #fff;
-    padding: 5px;
     border-radius: 5px;
 }
 
@@ -238,9 +313,8 @@ nav ul li a:hover {
     font-size: 2rem;
     text-align: center;
     margin-bottom: 50px;
-    background-color: #004d4d;
+    background-color: #042630;
     color: #fff;
-    padding: 10px;
     border-radius: 10px;
 }
 
@@ -258,12 +332,68 @@ nav ul li a:hover {
     text-align: center;
 }
 
+.skill {
+    height: 200px;
+    width: 20%;
+    width: clamp(100px 25% 200px);
+    background-color: #305f61;
+    border-left: 5px solid #86b9b0;
+    border-right: 5px solid #86b9b0;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.skill ul li {
+    list-style: none;
+    border-bottom: 1px dotted;
+}
+
 
 footer {
     grid-area: footer;
-    background: #004d4d;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #042630;
     color: #fff;
-    text-align: center;
-    padding: 30px 0;
+    text-align: start;
+    padding: 30px;
 }
+
+.reseaux {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row-reverse;
+    gap: 20px;
+}
+
+.reseaux img {
+    width: 5vh;
+    background-color: darkred;
+    border-radius: 50%;
+    padding: 8px;
+}
+
+.reseaux a {
+    position: relative;
+    text-decoration: none;
+}
+
+.reseaux a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0;
+    height: 2px;
+    background-color: red;
+    transition: width 0.3s ease;
+}
+
+.reseaux a:hover::after {
+    width: 100%;
+}
+
+
 
