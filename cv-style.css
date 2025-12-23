@@ -395,5 +395,228 @@ footer {
     width: 100%;
 }
 
+@media screen and (max-width: 1024px) {
+    main {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            "header"
+            "nav"
+            "section-apropos"
+            "section-img"
+            "experiences"
+            "formations"
+            "skills"
+            "footer";
+    }
 
+    header h1 {
+        font-size: 3.5em;
+        padding: 30px;
+    }
+
+    header .subtitle {
+        font-size: 1.2em;
+        padding: 30px;
+    }
+
+    nav {
+        padding: 15px 30px;
+        justify-content: center;
+    }
+
+    nav ul {
+        gap: 30px;
+    }
+
+    .section-apropos {
+        padding: 8%;
+        font-size: 1.1rem;
+    }
+
+    .section-img {
+        padding: 30px;
+        margin-top: 0;
+    }
+
+    #img img {
+        margin-left: 0;
+        width: clamp(250px, 50%, 400px);
+        height: clamp(250px, 50%, 400px);
+    }
+
+    #img ul {
+        width: 100%;
+    }
+
+    .experiences, .formations {
+        padding: 30px;
+    }
+
+    .items {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+
+    .skill {
+        width: clamp(150px, 40%, 250px);
+    }
+
+    footer {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .reseaux {
+        flex-direction: row;
+    }
+}
+
+/* MOBILE (moins de 768px) */
+@media screen and (max-width: 768px) {
+    header {
+        background-attachment: scroll;
+    }
+
+    header h1 {
+        font-size: 2.5em;
+        padding: 20px;
+    }
+
+    header .subtitle {
+        font-size: 1em;
+        padding: 20px;
+    }
+
+    nav {
+        padding: 10px 20px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+    }
+
+    nav ul li a {
+        display: block;
+        padding: 8px 12px;
+    }
+
+    .section-apropos {
+        padding: 5%;
+        font-size: 1rem;
+    }
+
+    .section-img {
+        padding: 20px;
+    }
+
+    #img img {
+        width: clamp(200px, 80%, 300px);
+        height: clamp(200px, 80%, 300px);
+    }
+
+    .experiences, .formations {
+        padding: 20px;
+    }
+
+    .experiences h2, .formations h2, .skills h2 {
+        font-size: 1.5rem;
+        margin-bottom: 30px;
+    }
+
+    .items {
+        gap: 15px;
+    }
+
+    .items h3 {
+        font-size: 1.2rem;
+    }
+
+    .content {
+        padding: 15px;
+    }
+
+    .content p {
+        font-size: 0.9rem;
+    }
+
+    #formation-1 p, #formation-2 p {
+        font-size: 1rem;
+    }
+
+    .skill-items {
+        padding: 20px;
+        gap: 15px;
+    }
+
+    .skill {
+        width: clamp(120px, 80%, 200px);
+        height: auto;
+        min-height: 150px;
+    }
+
+    footer {
+        padding: 20px;
+    }
+
+    .reseaux img {
+        width: 40px;
+    }
+}
+
+/* TRÈS PETIT MOBILE (moins de 480px) */
+@media screen and (max-width: 480px) {
+    header h1 {
+        font-size: 2em;
+        padding: 15px;
+    }
+
+    header .subtitle {
+        font-size: 0.9em;
+        padding: 15px;
+    }
+
+    nav ul {
+        gap: 5px;
+    }
+
+    .section-apropos {
+        padding: 20px;
+        font-size: 0.95rem;
+    }
+
+    #img img {
+        width: clamp(150px, 90%, 250px);
+        height: clamp(150px, 90%, 250px);
+    }
+
+    .experiences, .formations {
+        padding: 15px;
+    }
+
+    .experiences h2, .formations h2, .skills h2 {
+        font-size: 1.3rem;
+        margin-bottom: 20px;
+    }
+
+    .content {
+        padding: 12px;
+    }
+
+    .items h3 {
+        font-size: 1.1rem;
+    }
+
+    .skill {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .reseaux {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+}
 
