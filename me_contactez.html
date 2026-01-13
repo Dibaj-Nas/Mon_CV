@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Me connecter</title>
+</head>
+<body>
+    <!-- objectif: créer une formulaire de contact titre: "Travaillons ensemble" qui permet de me contacter et qui
+    contient les champs suivants:
+    nom et prénom (obligatoire)
+    nom entreprise (pas obligatoire)
+    email (obligatoire)
+    message (obligatoire)
+    bouton envoyer.
+    dans la section suivante: des informations sur mes réseaux sociaux avec les icônes. -->
+
+    <header>
+        <div>
+            <h1>DIBAJ NASRULLAH</h1>
+            <p class="subtitle">Développeur web / Web Mobile</p>
+        </div>
+    </header>
+
+    <nav class="nav" aria-label="Navigation principale">
+        <ul>
+            <li><a href="#apropos">À propos</a></li>
+            <li><a href="#experiences">Expériences</a></li>
+            <li><a href="#skills">Compétences</a></li>
+            <li><a href="#contact">Contacts</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section>
+            <h2>Travaillons ensemble</h2>
+            <form action="">
+                <label for="nom">Nom et prénom</label>
+                <input type="text" id="nom" name="nom" required>
+                <label for="entreprise">Nom de l'entreprise</label>
+                <input type="text" id="entreprise" name="entreprise">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+                <label for="message">Message</label>
+                <textarea id="message" name="message" required></textarea>
+                <button type="submit">Envoyer</button>
+            </form>
+        </section>
+    </main>
+
+    
+</body>
+</html>
