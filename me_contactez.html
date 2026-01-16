@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style-contact.css">
     <title>Me connecter</title>
 </head>
 <body>
@@ -15,39 +16,132 @@
     bouton envoyer.
     dans la section suivante: des informations sur mes réseaux sociaux avec les icônes. -->
 
-    <header>
-        <div>
-            <h1>DIBAJ NASRULLAH</h1>
-            <p class="subtitle">Développeur web / Web Mobile</p>
-        </div>
-    </header>
-
-    <nav class="nav" aria-label="Navigation principale">
-        <ul>
-            <li><a href="#apropos">À propos</a></li>
-            <li><a href="#experiences">Expériences</a></li>
-            <li><a href="#skills">Compétences</a></li>
-            <li><a href="#contact">Contacts</a></li>
-        </ul>
-    </nav>
-
-    <main>
-        <section>
-            <h2>Travaillons ensemble</h2>
-            <form action="">
-                <label for="nom">Nom et prénom</label>
-                <input type="text" id="nom" name="nom" required>
-                <label for="entreprise">Nom de l'entreprise</label>
-                <input type="text" id="entreprise" name="entreprise">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" required>
-                <label for="message">Message</label>
-                <textarea id="message" name="message" required></textarea>
-                <button type="submit">Envoyer</button>
+    <div class="container contact-container">
+        <!-- Navigation -->
+        <header class="contact-header">
+            <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Retour au CV</a>
+            <h1>Formulaire de Contact</h1>
+            <p>Remplissez ce formulaire pour me contacter. Je vous répondrai dans les plus brefs délais.</p>
+        </header>
+        
+        <!-- Formulaire de contact -->
+        <main class="contact-main" role="main">
+            <form id="contact-form" class="contact-form" aria-labelledby="form-heading">
+                <h2 id="form-heading">Informations de contact</h2>
+                
+                <div class="form-group">
+                    <label for="firstname">Prénom *</label>
+                    <input type="text" id="firstname" name="firstname" required aria-required="true" placeholder="Votre prénom">
+                </div>
+                
+                <div class="form-group">
+                    <label for="lastname">Nom *</label>
+                    <input type="text" id="lastname" name="lastname" required aria-required="true" placeholder="Votre nom">
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" name="email" required aria-required="true" placeholder="votre.email@exemple.com">
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">Téléphone</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Votre numéro de téléphone">
+                </div>
+                
+                <div class="form-group">
+                    <label for="subject">Sujet *</label>
+                    <select id="subject" name="subject" required aria-required="true">
+                        <option value="" disabled selected>Sélectionnez un sujet</option>
+                        <option value="emploi">Proposition d'emploi</option>
+                        <option value="freelance">Projet freelance</option>
+                        <option value="collaboration">Collaboration</option>
+                        <option value="question">Question générale</option>
+                        <option value="autre">Autre</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Message *</label>
+                    <textarea id="message" name="message" rows="6" required aria-required="true" placeholder="Votre message..."></textarea>
+                </div>
+                
+                <div class="form-group checkbox-group">
+                    <input type="checkbox" id="consent" name="consent" required aria-required="true">
+                    <label for="consent">J'accepte que mes informations soient utilisées pour me recontacter *</label>
+                </div>
+                
+                <div class="form-actions">
+                    <button type="submit" class="btn submit-btn">Envoyer le message <i class="fas fa-paper-plane"></i></button>
+                    <button type="reset" class="btn reset-btn">Réinitialiser le formulaire</button>
+                </div>
             </form>
-        </section>
-    </main>
-
+            
+            <!-- Informations de contact alternatives -->
+            <aside class="contact-alternative" aria-labelledby="alternative-heading">
+                <h2 id="alternative-heading">Autres moyens de contact</h2>
+                <div class="contact-method">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <h3>Email</h3>
+                        <p>jean.dupont@email.com</p>
+                    </div>
+                </div>
+                <div class="contact-method">
+                    <i class="fas fa-phone"></i>
+                    <div>
+                        <h3>Téléphone</h3>
+                        <p>+33 6 12 34 56 78</p>
+                    </div>
+                </div>
+                <div class="contact-method">
+                    <i class="fab fa-linkedin"></i>
+                    <div>
+                        <h3>LinkedIn</h3>
+                        <p>linkedin.com/in/jeandupont</p>
+                    </div>
+                </div>
+                <div class="contact-method">
+                    <i class="fab fa-github"></i>
+                    <div>
+                        <h3>GitHub</h3>
+                        <p>github.com/jeandupont</p>
+                    </div>
+                </div>
+            </aside>
+        </main>
+    </div>
     
+    <!-- Pied de page -->
+    <footer class="footer" role="contentinfo">
+        <p>&copy; 2023 Jean Dupont. Tous droits réservés.</p>
+        <p>Page de contact - Exercice HTML/CSS</p>
+    </footer>
+    
+    <script>
+        // Validation basique du formulaire
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            
+            // Validation basique de l'email
+            if (!email.includes('@')) {
+                alert('Veuillez entrer une adresse email valide.');
+                event.preventDefault();
+                return;
+            }
+            
+            // Validation optionnelle du téléphone (format français)
+            if (phone && !/^(\+33|0)[1-9](\d{2}){4}$/.test(phone.replace(/\s/g, ''))) {
+                alert('Veuillez entrer un numéro de téléphone valide (format français).');
+                event.preventDefault();
+                return;
+            }
+            
+            // En production, ici on enverrait les données à un serveur
+            alert('Formulaire validé ! En production, les données seraient envoyées à un serveur.');
+            event.preventDefault(); // Empêche l'envoi réel pour cet exercice
+        });
+    </script>
 </body>
 </html>
