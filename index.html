@@ -15,6 +15,11 @@
             <h1>DIBAJ NASRULLAH</h1>
             <p class="subtitle">Développeur web / Web Mobile</p>
         </div>
+
+        <div class="scroll-indicator">
+                <span></span>
+            </div>
+            <div class="flash"></div>
     </header>
 
 
@@ -47,7 +52,7 @@
             </div>
         </section>
 
-        <section class="section-apropos" id="apropos">
+        <section class="section-apropos animate" id="apropos">
             <div id="texte">
                 <h2>Développeur web <mark>En Formation</mark></h2>
                 <p>
@@ -58,13 +63,10 @@
                     pratiques du développement professionnel.
                 </p>
             </div>
-            <div class="scroll-indicator">
-                <span></span>
-            </div>
-            <div class="flash"></div>
+            
         </section>
 
-        <section class="experiences" id="experiences">
+        <section class="experiences animate" id="experiences">
             <h2>Expériences professionnelles</h2>
 
             <div class="items">
@@ -94,7 +96,7 @@
             </div>
         </section>
 
-        <section class="formations" id="formations">
+        <section class="formations animate" id="formations">
             <h2>Formations</h2>
 
             <div class="items-formation">
@@ -110,7 +112,7 @@
             </div>
         </section>
 
-        <section class="skills" id="skills">
+        <section class="skills animate" id="skills">
             <h2>Mes Compétences</h2>
             <div class="skill-items">
                 <div class="skill">
@@ -181,14 +183,9 @@
         </div>
     </footer>
 
-    <script>
-        const burger = document.querySelector('.burger');
-        const navMenu = document.querySelector('nav ul');
-            
-        burger.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-        });
-    </script>
+    <script src="js/animations.js"></script>
+    <script src="js/main.js"></script>
+
 
 
 </body>

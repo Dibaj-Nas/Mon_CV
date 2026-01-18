@@ -153,6 +153,7 @@ nav ul li a:hover {
     justify-content: center;
     list-style: none;
     margin-top: 10px;
+    margin-left: 40px;
     width: 100%;
 }
 
@@ -247,6 +248,7 @@ nav ul li a:hover {
 .formations {
     grid-area: formations;
     padding: 50px;
+    
 }
 
 .formations h2 {
@@ -258,11 +260,12 @@ nav ul li a:hover {
     color: #fff;
     padding: 10px;
     border-radius: 10px;
+    
 }
 
 .items-formation {
     flex-wrap: wrap;
-    gap: 20px;
+    
 }
 
 .items-formation > div {
@@ -277,13 +280,14 @@ nav ul li a:hover {
     font-size: 1.1rem;
 } 
 #formation-1 {
-    border-bottom: 2px solid #86b9b0;
+    height: 100%;
+    margin-bottom: 60px;
     border-left: 5px solid #86b9b0;
     border-right: 5px solid #86b9b0;
 }
 
 #formation-2 {
-    border-top: 2px solid #86b9b0;
+    height: 100%;
     border-left: 5px solid #86b9b0;
     border-right: 5px solid #86b9b0;
 }
@@ -405,6 +409,18 @@ footer {
 .reseaux a:hover::after {
     width: 100%;
 }
+
+.hidden {
+    opacity: 0;
+    transform: translateY(40px);
+}
+
+.show {
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 0.8s ease-out;
+}
+
 
 @media (max-width: 1024px) {
     main {

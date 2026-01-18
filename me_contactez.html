@@ -84,28 +84,26 @@
                     <i class="fas fa-envelope"></i>
                     <div>
                         <h3>Email</h3>
-                        <p>jean.dupont@email.com</p>
+                        <p>dibajwafa@yahoo.com</p>
                     </div>
                 </div>
                 <div class="contact-method">
                     <i class="fas fa-phone"></i>
                     <div>
                         <h3>Téléphone</h3>
-                        <p>+33 6 12 34 56 78</p>
+                        <p>+33 749 634 985</p>
                     </div>
                 </div>
                 <div class="contact-method">
                     <i class="fab fa-linkedin"></i>
                     <div>
-                        <h3>LinkedIn</h3>
-                        <p>linkedin.com/in/jeandupont</p>
+                        <p><a href="https://www.linkedin.com/in/dibaj-nasrullah-b18912381">LindedIn</a></p>
                     </div>
                 </div>
                 <div class="contact-method">
                     <i class="fab fa-github"></i>
                     <div>
-                        <h3>GitHub</h3>
-                        <p>github.com/jeandupont</p>
+                        <p><a href="https://github.com/Dibaj-Nas">GitHub</a></p>
                     </div>
                 </div>
             </aside>
@@ -114,34 +112,11 @@
     
     <!-- Pied de page -->
     <footer class="footer" role="contentinfo">
-        <p>&copy; 2023 Jean Dupont. Tous droits réservés.</p>
-        <p>Page de contact - Exercice HTML/CSS</p>
+        <p>&copy; 2025 Dibaj Nasrullah. Tous droits réservés.</p>
+            <p>Dernière Modification <data value="12,15,2025">15/12/2025</data></p>
     </footer>
     
-    <script>
-        // Validation basique du formulaire
-        document.getElementById('contact-form').addEventListener('submit', function(event) {
-            const email = document.getElementById('email').value;
-            const phone = document.getElementById('phone').value;
-            
-            // Validation basique de l'email
-            if (!email.includes('@')) {
-                alert('Veuillez entrer une adresse email valide.');
-                event.preventDefault();
-                return;
-            }
-            
-            // Validation optionnelle du téléphone (format français)
-            if (phone && !/^(\+33|0)[1-9](\d{2}){4}$/.test(phone.replace(/\s/g, ''))) {
-                alert('Veuillez entrer un numéro de téléphone valide (format français).');
-                event.preventDefault();
-                return;
-            }
-            
-            // En production, ici on enverrait les données à un serveur
-            alert('Formulaire validé ! En production, les données seraient envoyées à un serveur.');
-            event.preventDefault(); // Empêche l'envoi réel pour cet exercice
-        });
-    </script>
+    <script src="js/contact.js"></script>
+
 </body>
 </html>
